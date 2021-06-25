@@ -1,0 +1,31 @@
+[{
+  "_id": {
+    "$oid": "60d5ade68b98301ec0291da9"
+  },
+  "title": "Photo Title 1",
+  "description": "Photo Description 1",
+  "dateCreated": {
+    "$date": "2021-06-25T10:20:22.434Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d5adf88b98301ec0291dac"
+  },
+  "title": "Photo Title 2",
+  "description": "Photo Description 2",
+  "dateCreated": {
+    "$date": "2021-06-25T10:20:40.570Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d5ae028b98301ec0291daf"
+  },
+  "title": "Photo Title 3",
+  "description": "Photo Description 3",
+  "dateCreated": {
+    "$date": "2021-06-25T10:20:50.906Z"
+  },
+  "__v": 0
+}]
