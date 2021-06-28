@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const ejs = require('ejs');
-const Photo = require('./models/Photo');
+const Post = require('./models/Post');
 // const path = require('path')
 const app = express();
 
@@ -24,9 +24,9 @@ app.use(express.json())
 app.get('/', async (req, res) => {
   //res.sendFile(path.resolve(__dirname,'views/index.html'))
 
-  const photos = await Photo.find({})
-  res.render('index',{
-    photos
+  const posts = await Post.find({})
+  res.render('index', {
+    posts
   })
 });
 
@@ -41,11 +41,19 @@ app.get('/add_post', (req, res) => {
   res.render('add_post')
 });
 
-app.post('/photos', async (req, res) => {
-  await Photo.create(req.body)
+app.post('/posts', async (req, res) => {
+  await Post.create(req.body)
   res.redirect('/')
 });
 
+app.get('/posts/:id', async (req, res) => {
+  const post = await Post.findById(req.params.id)
+  res.render('post', { post })
+});
+
+app.get('/post', (req, res) => {
+  res.render('post')
+});
 
 const port = 3000;
 
