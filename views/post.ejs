@@ -5,7 +5,7 @@
   <%- include('partials/_navigation') -%>
 
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('img/post-bg.jpg')">
+  <header class="masthead" style="background-image: url('<%= post.image %>')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
@@ -63,6 +63,13 @@
           <p>Placeholder text by
             <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by
             <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
+            <div class="text-center">
+              <a href="/posts/edit/<%= post._id %>" class="btn btn-danger p-0 "><span>EDIT</span></a>
+              <form action="/posts/<%= post._id %>?_method=DELETE"" method="POST">
+                <button class="btn btn-danger p-0" onclick="return confirm('emin misin')">DELETE</button>
+            </form>
+              
+            </div>
         </div>
       </div>
     </div>
