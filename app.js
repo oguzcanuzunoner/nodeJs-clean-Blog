@@ -7,7 +7,7 @@ const postController = require("./controllers/postControllers");
 const pageController = require("./controllers/pageControllers");
 const app = express();
 
-mongoose.connect("mongodb://localhost/cleanblog-test-db", {
+mongoose.connect("mongodb+srv://oguzcan:RCekXXSOIae55igf@cluster0.svx4m.mongodb.net/clean-blog-db?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
@@ -40,7 +40,7 @@ app.get("/add_post", pageController.getAddPage);
 
 app.get("/posts/edit/:id", pageController.getEditPage);
 
-const port = 3000;
+const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
   console.log(`Sunucu ${port} portuna bağlandı.`);
